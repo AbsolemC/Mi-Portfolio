@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap');
 
 :root {
-    --main-bg-color: rgb(23, 0, 35);
-    --navbar-bg-color: rgb(20, 0, 28);
-    --elements-color: rgb(0, 190, 152);
-    --button-hover-color:  rgb(14, 214, 174);
-    --card-bg-color: rgb(34, 2, 50);
+    --main-bg-color: #2c0135;
+    --navbar-bg-color:  #200027;
+    --elements-color: #00be98;
+    --button-hover-color:  #0ed6ae;
+    --card-bg-color: #220232;
 
 }
 
@@ -28,28 +28,30 @@ body {
 }
 
 .wrapper {
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--main-bg-color);
-    color: #fff;
+    left: 0;
+    top: 0;
+    display: flex;
+    position: fixed;
+    width: 170px;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--navbar-bg-color);
+    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.505);
+
 }
 
 .navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    width: 170px;
-    background-color: var(--navbar-bg-color);
-    position: fixed;
-    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.505);
+    display: block;
 }
 
 .brand {
-    margin-top: 20px;
+    margin-top: 1em;
     font-size: 2.5em;
-    align-self: center;
     cursor: pointer;
+    background-color: var(--navbar-bg-color);
+}
+.brand h2 {
+    color: #fff;
 }
 
 .brand span {
@@ -97,11 +99,17 @@ body {
     transition: ease-in-out .6s;
 }
 
+.page {
+    width: 99vw;
+    height: 100vh;
+    padding-left: 10em;
+    ;
+}
 
 .main {
-    margin: 0px 150px;
-    width: 80vw;
-    height: 80vh;
+    height: 100vh;
+    background-color: var(--main-bg-color);
+    color: #fff;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
@@ -153,11 +161,10 @@ body {
 }
 
 .about {
+    height: 100vh;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     align-items: center;
-    width: 100vw;
-    height: 100vh;
 
     
 }
@@ -201,8 +208,6 @@ body {
 }
 
 .portfolio {
-    padding-left: 169px;
-    width: 100vw;
     height: 100vh;
     background-color: var(--main-bg-color);
     color: #fff;
@@ -226,13 +231,12 @@ body {
     grid-column: 2/3;
     display: flex;
     align-items: center;
-justify-content: center;}
+    justify-content: center;
+}
 
 .card {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    width: 20vw;
     background-color: var(--card-bg-color);
     border-radius: 8px;
     margin: 30px;
@@ -305,11 +309,10 @@ justify-content: center;}
 }
 
 .contact-section {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
 }
 
 .contact-headings {
@@ -320,10 +323,10 @@ justify-content: center;}
 
 .container-contact {
     padding: 1em;
-    margin: 0 auto;
-}
+    margin: 0 auto;}
 
 .contact-form {
+    margin-top: -5em;
     background-color: var(--main-bg-color);
     padding: 1em 2em 5em 2em;
     border-radius: 15px;
@@ -331,13 +334,14 @@ justify-content: center;}
 }
 .contact-form h4 {
     font-size: 2em;
+    font-weight: 400;
     padding: 1em;
     color: #fff;
 }
 .form {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content:space-evenly;
     
 }
 
@@ -351,11 +355,6 @@ justify-content: center;}
     color: #fff;
 }
 
-.form label {
-    color: #fff;
-    margin-top: 2em;
-}
-
 .form textarea {
     height: 150px;
     background: none;
@@ -363,7 +362,149 @@ justify-content: center;}
     padding: 1.5em;
     margin: 1.5em;
     border: 1px solid var(--elements-color);
+    border-radius: 8px;
 }
+
+.open-menu, .close-menu {
+    display: none;
+
+}
+
+@media (max-width: 950px) {
+
+    .wrapper {
+        display: flex;
+        width: 100vw;
+    }
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 150px;
+    }
+    .brand{
+    align-self: center;        
+    }
+
+    .menu {
+        flex-direction: column;
+        padding-top: 80px;
+        left: 0;
+        top: 0;
+        align-items: center;
+        background-color: var(--navbar-bg-color);
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+        display: none;
+    }
+    
+    .menu li {
+        padding: 20px 40px;
+    }
+
+    .menu a {
+        line-height: 70px;
+        font-size: 25px;
+    }
+
+    .open-menu, .close-menu {
+        display: block;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .close-menu {
+        align-self: flex-end;
+        margin: -4em 5em 0;
+    }
+
+    .open-menu {
+        align-self: flex-end;
+        margin: -1.5em 3em;
+    }
+
+    .open-menu img {
+        width: 40px;
+    }
+    .close-menu img {
+        width: 40px;
+    }
+
+    .menu_opened {
+        display: flex;
+        position: fixed;
+        left: 0;
+        top: -15px;
+        height: 100vh;
+        pointer-events: all;
+        transition: easease-in-out .3s;
+    }
+
+
+    .open-menu:focus:not(:focus-visible), .close-menu:focus:not(focus-visible) {
+        outline: none;
+    }
+
+    .main img {
+        display: none;
+    }
+
+    .page {
+        margin: 150px 0;
+        padding: 0 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+
+    .main {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }
+
+    .portfolio {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        
+    }
+
+    .portfolio .card {
+        width: 25vw;
+        flex-wrap: nowrap;
+        font-size: 0.8em;
+        align-self: center;
+    }
+
+    .card p {
+        display: none;
+    }
+
+    .about img {
+        display: none;
+    }
+
+    .about {
+        display: flex;
+        background-image: url(../img/Recurso\ 3.png);
+        background-size: cover;
+    }
+
+    .about-info {
+        background-color: rgba(255, 255, 255, 0.8);
+        
+
+    }
+
+
+}
+
+
 
 
 
