@@ -136,6 +136,9 @@ body {
     z-index: 1;
     grid-column: 3/3;
 }
+.main .download-cv {
+    font-size: 1.5em;
+}
 
 .download-cv {
     font-family: 'Montserrat', sans-serif;
@@ -226,17 +229,15 @@ body {
 }
 
 .portfolio .container {
-    grid-column: 2/3;
     display: flex;
     align-items: center;
-    justify-content: center;
     overflow-x: auto;
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    max-width: 300px;
+    max-width: 280px;
     background-color: var(--card-bg-color);
     border-radius: 8px;
     margin: 30px;
@@ -306,62 +307,6 @@ body {
     zoom: 102%;
 }
 
-.contact-section {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contact-headings {
-    font-size: 2em;
-    padding: 1em;
-    color: var(--main-bg-color);
-}
-
-.container-contact {
-    padding: 1em;
-    margin: 0 auto;}
-
-.contact-form {
-    margin-top: -5em;
-    background-color: var(--main-bg-color);
-    padding: 1em 2em 5em 2em;
-    border-radius: 15px;
-    
-}
-.contact-form h4 {
-    font-size: 2em;
-    font-weight: 400;
-    padding: 1em;
-    color: #fff;
-}
-.form {
-    display: flex;
-    flex-direction: column;
-    justify-content:space-evenly;
-    
-}
-
-.form input {
-    border: none;
-    padding: 1em;
-    margin: 1.5em;
-    margin-bottom: 1em;
-    background: none;
-    border-bottom: 1px solid var(--elements-color);
-    color: #fff;
-}
-
-.form textarea {
-    height: 150px;
-    background: none;
-    color: #fff;
-    padding: 1.5em;
-    margin: 1.5em;
-    border: 1px solid var(--elements-color);
-    border-radius: 8px;
-}
 
 .open-menu, .close-menu {
     display: none;
@@ -440,7 +385,6 @@ body {
         transition: easease-in-out .3s;
     }
 
-
     .open-menu:focus:not(:focus-visible), .close-menu:focus:not(focus-visible) {
         outline: none;
     }
@@ -461,30 +405,32 @@ body {
     .main {
         width: 100%;
         display: flex;
+        text-align: center;
         justify-content: center;
         align-self: center;
+    }
+
+    .main .download-cv {
+        font-size: 1.2em;
     }
 
     .portfolio {
         display: flex;
         width: 100%;
         flex-direction: column;
+        align-items: center;
     }
 
     .portfolio .container {
         display: flex;
         flex-wrap: wrap;
-        align-self: center;
+        justify-content: center;
         overflow-x: auto;
     }
 
     .portfolio .card {
         width: 200px;
         font-size: 0.8em;
-        align-self: center;
-    }
-
-    .card img{
     }
 
     .card p {
@@ -506,7 +452,205 @@ body {
     
     }
 
+    .container-contact {
+        margin: 0 auto;
+    }
+    
+    .contact-section {
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80vw;
+    }
+    
+    .contact-headings {
+        font-size: 2em;
+        align-self: center;
+        margin-top: 1em;
+        margin-bottom: -1em;
+        color: var(--main-bg-color);
+    }
+    
+    .contact-info {
+        display: grid;
+        gap: 5px;
+        line-height: 30px;
+        color: #fff;
+        font-weight: 100;
+    
+    }
+    
+    .contact-form {
+        display: grid;
+        grid-template-rows: 1fr, 1fr;
+        gap: 3px;
+        background-color: var(--main-bg-color);
+        border-radius: 8px;
+        padding: 3em 2em;
+        margin-bottom: 50px;
+
+        
+    }
+    .contact-form h4 {
+        font-size: 1.5em;
+        font-weight: 400;
+        padding: 1em;
+        color: #fff;
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content:space-evenly;
+        
+    }
+    
+    .form input {
+        border: none;
+        padding: 1em;
+        margin: 1.5em;
+        margin-bottom: 1em;
+        background: none;
+        border-bottom: 1px solid var(--elements-color);
+        color: #fff;
+    }
+    
+    .form textarea {
+        height: 150px;
+        background: none;
+        color: #fff;
+        padding: 1.5em;
+        margin: 1.5em;
+        border: 1px solid var(--elements-color);
+        border-radius: 8px;
+    }
+
+    .footer {
+        color: #fff;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .footer div {
+        margin-top: 2em;
+    }
+
 }
+
+@media (min-width: 950px) {
+    
+
+.container-contact {
+    margin: 0 auto;
+}
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+}
+
+.contact-form {
+    font-size: 20px;
+    padding: 70px;
+    background-color: var(--main-bg-color);
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 50px;
+
+    
+}
+
+.contact-headings {
+    font-size: 2em;
+    align-self: center;
+    margin-top: 1em;
+    margin-bottom: -1em;
+    color: var(--main-bg-color);
+}
+
+.contact-info {
+    grid-area: info;
+    text-align: left;
+    gap: 5px;
+    line-height: 30px;
+    color: #fff;
+    font-weight: 100;
+    align-self: center;
+
+}
+
+.contact-form h4 {
+    grid-area: title;
+    font-size: 1.3em;
+    font-weight: 400;
+    color: #fff;
+    
+}
+
+.form {
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    
+}
+
+.form input {
+    border: none;
+    padding: 1em;
+    margin: 1.5em;
+    margin-bottom: 1em;
+    background: none;
+    border-bottom: 1px solid var(--elements-color);
+    color: #fff;
+}
+
+.form textarea {
+    height: 150px;
+    background: none;
+    color: #fff;
+    padding: 1.5em;
+    margin: 1.5em;
+    border: 1px solid var(--elements-color);
+    border-radius: 8px;
+}
+.contact-form {
+    display: grid;
+    grid: 
+    "title form" auto
+    "info form" 1fr
+    "footer form" auto/
+    1fr 2fr;
+    align-items: start;
+    padding: 2em;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer {
+    display: flex;
+    color: #fff;
+    justify-content: flex-start;
+    gap: 60px;
+    cursor: pointer;
+}
+
+.footer a {
+    color: #fff;
+}
+
+.footer a:hover{
+    color: var(--elements-color);
+    transition: ease-in-out .3s;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.351))    
+}
+}
+
 
 
 
